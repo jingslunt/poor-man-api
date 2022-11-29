@@ -1,7 +1,7 @@
-run = ["docker-compose  up -d"]
+run = ["service docker start"]
 
 # If the main file is changed, also change it in Makefile.
-entrypoint = "run.sh"
+entrypoint = "docker-compose  up -d"
 hidden = [".gitignore", ".envhash"]
 
 [nix]
