@@ -10,6 +10,15 @@ services:
     depends_on:
       - etcd
       - postgrest
+  apisix-dashboard:
+    image: apache/apisix-dashboard
+    restart: always
+    volumes:
+    - ./dashboard/conf.yaml:/usr/local/apisix-dashboard/conf/conf.yaml
+    ports:
+    - "9000:9000"
+    depends_on:
+      - apisix
   etcd:
     image: bitnami/etcd:3.5.2
     environment:
